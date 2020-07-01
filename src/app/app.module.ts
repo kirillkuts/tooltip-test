@@ -3,16 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CustomTooltipModule } from './@shared/directives/custom-tooltip/custom-tooltip.module';
 
-@NgModule({
+@NgModule( {
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CustomTooltipModule,
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+  providers: [
+    { provide: 'WINDOW', useFactory: getWindow },
+  ],
+  bootstrap: [ AppComponent ]
+} )
+export class AppModule {
+}
+
+export function getWindow() {
+  return (typeof window !== 'undefined') ? window : null;
+}

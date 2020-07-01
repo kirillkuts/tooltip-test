@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin-top: 400px;
+    margin-bottom: 10000px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    background-color: #0000FF;
+    color: #fff;
+
+    font-size: 14px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+  }
+}
